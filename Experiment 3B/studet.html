@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KEC Portal - Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark shadow-sm">
+        <div class="container">
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link text-white" href="studet.html">Student Record Form</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="biod.html">Bio-Data Form</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="academic.html">Academic Records</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="cocurricular.html">Co-Curricular Activities</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="extracurricular.html">Extra Curricular Activities</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="achievement.html">Student Achievements</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="address.html">Address</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <h2 class="mb-4 text-center">Student Record Form</h2>
+                <form onsubmit="validateForm(event)">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="name"  required>
+                        <div class="error" id="nameerror">First letter must be uppercase.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="regno" class="form-label">Registration Number</label>
+                        <input type="text" class="form-control" id="regno"  required>
+                        <div class="error" id="regnoerror">Enter correct Roll No and it must be filled.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="program" class="form-label">Programme, Branch & Section</label>
+                        <input type="text" class="form-control" id="program" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="studyfrom" class="form-label">Period of Study (From)</label>
+                        <input type="text" class="form-control" id="studyfrom" placeholder="2023" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="studyto" class="form-label">Period of Study (To)</label>
+                        <input type="text" class="form-control" id="studyto" placeholder="2027" required>
+                        <div class="error" id="studyerror">"Period of Study (From)" must be less than "Period of Study (To)".</div>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Next</button>
+                    <br><br>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

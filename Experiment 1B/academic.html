@@ -1,0 +1,114 @@
+<html>
+	<head>
+		<title>Blog</title>
+        <link href="style.css" rel="stylesheet">
+        <link href="imgstyles.css" rel="stylesheet">
+	</head>
+	<body>
+		<div style="background-color:#6c757d; padding: 15px; display: flex; align-items: center;">
+            <div style="flex: 1;">
+                <h1 style="color:#000000; margin: 0;">ARUN S</h1>
+            </div>
+            <div>
+                <img src="logo.jpg" alt="Example Image" width="120" height="150" style="position: relative; top: 10px; left: -80px; border-radius: 20%; border: 5px solid #555;">
+            </div>
+        </div>
+        <nav style="background-color: #333; padding: 18px;">
+          <ul style="list-style-type: none; margin: 0; padding: 0; display: flex;">
+            <li style="margin-right: 20px;">
+              <a id="na" href="index.html" >Home</a>
+            </li>
+                    <li style="margin-right: 20px;">
+              <a id="na" href="project.html">Project Works</a>
+            </li>
+                    <li style="margin-right: 20px;">
+              <a id="na" href="academic.html">Academic Performance</a>
+            </li>
+                    <li style="margin-right: 20px;">
+              <a id="na" href="presentations.html">Presentations</a>
+            </li>
+            <li>
+              <a id="na" href="contact.html">Contact</a>
+            </li>
+          </ul>
+        </nav>
+        <div style="background-color:#000000;">
+            <h2 id="academic" style="color:rgb(255, 255, 255);"><center>ACADEMIC PERFORMANCE</center></h2>
+            </div>
+            <center>
+                <table border=2 style="border-color:rgb(26, 64, 153); border-collapse: collapse; border-width:5px; color:rgb(26, 75, 148);border-inline-color:rgb(90, 144, 202);" id="table">
+                  <th>S.NO</th> 
+                  <th>STANDARD</th>
+                  <th>YEAR</th>
+                  <th>MARKS</th>
+                  <th>INSTITUTE OF STUDY</th>
+                  <th>PLACE OF STUDY</th>
+                  <th>CERTIFICATE</th>
+                  </b>
+                </tr>
+                <tr style="text-align:center">
+                  <td>1</td>
+                  <td>10th</td>
+                  <td>(2020-2021)</td>
+                  <td>Pass</td>
+                  <td>Bharathiyar Matric School</td>
+                  <td>Salem</td>
+                  <td onclick="openModal('10 Mark.png')" style="cursor: pointer;">Click here!</td>
+                </tr>
+                <tr style="text-align:center">
+                  <td>2</td>
+                  <td>11th</td>
+                  <td>(2021-2022)</td>
+                  <td>87.6%</td>
+                  <td>Bharathiyar Matric School</td>
+                  <td>Salem</td>
+                  <td onclick="openModal('11 Mark.png')" style="cursor: pointer;">Click here!</td>
+                </tr>
+                <tr style="text-align:center">
+                    <td>3</td>
+                    <td>12th</td>
+                    <td>(2022-2023)</td>
+                    <td>94.3%</td>
+                    <td>Bharathiyar Matric School</td>
+                    <td>Salem</td>
+                    <td onclick="openModal('12 Mark.png')" style="cursor: pointer;">Click here!</td>
+                  </tr>
+                  <tr style="text-align:center">
+                    <td>4</td>
+                    <td>1st Semester</td>
+                    <td>(2023-2024)</td>
+                    <td> CGPA - 9.09</td>
+                    <td>Kongu Engineering College</td>
+                    <td>Erode</td>
+                  </tr>
+                  <tr style="text-align:center">
+                    <td>5</td>
+                    <td>2nd Semester</td>
+                    <td>(2024)</td>
+                    <td> CGPA - 9.33</td>
+                    <td>Kongu Engineering College</td>
+                    <td>Salem</td>
+                  </tr>
+                  
+            </table>
+            <div id="imageModal" class="modal">
+              <button class="close-btn" onclick="closeModal()">&times;</button>
+              <img id="modalImage" src="" alt="Presentation Image">
+            </div>
+        
+            <script>
+              function openModal(imageSrc) {
+                const modal = document.getElementById('imageModal');
+                const img = document.getElementById('modalImage');
+                img.src = imageSrc;
+                modal.style.display = 'flex';
+              }
+        
+              function closeModal() {
+                const modal = document.getElementById('imageModal');
+                modal.style.display = 'none';
+              }
+            </script>
+            </center>
+        </body>
+</html>

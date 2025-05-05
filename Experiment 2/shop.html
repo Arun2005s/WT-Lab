@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GenGear - Shop</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <div class="container-fluid py-4 bg-secondary text-white text-center">
+        <h1><b>GENGEAR</b></h1>
+        <p>All in one!</p>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">GenGear</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#cart">Cart</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section class="container py-5">
+        <h2 class="text-center">Shop Our Products</h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="laptop.jpeg" class="card-img-top" alt="Laptop" style="height: 300px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title">Laptop</h5>
+                        <p class="card-text">Intel i7, RTX 3050, 144Hz Display</p>
+                        <p class="text-primary">₹40,000</p>
+                        <button class="btn btn-primary" onclick="addToCart('Laptop', 40000)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="mobile.jpeg" class="card-img-top" alt="Smartphone" style="height: 300px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title">Smartphone</h5>
+                        <p class="card-text">Snapdragon 778G, 120Hz, 50Mp Camera</p>
+                        <p class="text-primary">₹20,000</p>
+                        <button class="btn btn-primary" onclick="addToCart('Smartphone', 20000)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="airpods.jpeg" class="card-img-top" alt="AirPods" style="height: 300px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title">AirPods</h5>
+                        <p class="card-text">Wireless earbuds with high-quality sound.</p>
+                        <p class="card-text">Active Noise Cancellation, 24-hour battery</p>
+                        <p class="text-primary">₹1,500</p>
+                        <button class="btn btn-primary" onclick="addToCart('AirPods', 1500)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="powerbank.jpeg" class="card-img-top" alt="Powerbank" style="height: 300px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title">Powerbank</h5>
+                        <p class="card-text">Portable powerbanks for on-the-go charging.</p>
+                        <p class="card-text">20,000mAh, Fast Charging</p>
+                        <p class="text-primary">₹3,000</p>
+                        <button class="btn btn-primary" onclick="addToCart('Powerbank', 3000)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="charger.jpeg" class="card-img-top" alt="Charger" style="height: 300px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title">Charger</h5>
+                        <p class="card-text">Fast charging adapters for all devices.</p>
+                        <p class="card-text">65W, USB-C, GaN Technology</p>
+                        <p class="text-primary">₹1,200</p>
+                        <button class="btn btn-primary" onclick="addToCart('Charger', 1200)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="mouse.jpeg" class="card-img-top" alt="Mouse" style="height: 300px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title">Mouse</h5>
+                        <p class="card-text">Ergonomic wireless mouse for daily use.</p>
+                        <p class="card-text">DPI Adjustment, 2.4GHz Wired</p>
+                        <p class="text-primary">₹700</p>
+                        <button class="btn btn-primary" onclick="addToCart('Mouse', 700)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="keyboard.jpeg" class="card-img-top" alt="Keyboard" style="height: 300px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title">Keyboard</h5>
+                        <p class="card-text">Mechanical keyboards for fast typing.</p>
+                        <p class="card-text">RGB Backlighting, Cherry MX Switches</p>
+                        <p class="text-primary">₹1,000</p>
+                        <button class="btn btn-primary" onclick="addToCart('Keyboard', 1000)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="monitor.jpeg" class="card-img-top" alt="Monitor" style="height: 300px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title">Monitor</h5>
+                        <p class="card-text">High-resolution monitors for professionals.</p>
+                        <p class="card-text">27-inch, 4K, 144Hz Refresh Rate</p>
+                        <p class="text-primary">₹12,000</p>
+                        <button class="btn btn-primary" onclick="addToCart('Monitor', 12000)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="joystick.jpeg" class="card-img-top" alt="Joystick" style="height: 300px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title">Joystick</h5>
+                        <p class="card-text">High-precision gaming joystick for pro gamers.</p>
+                        <p class="card-text">Ergonomic Design, 12 Programmable Buttons</p>
+                        <p class="text-primary">₹2,500</p>
+                        <button class="btn btn-primary" onclick="addToCart('Joystick', 2500)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <br><hr><br>
+    <section class="container py-5">
+        <h2 class="text-center" id="cart">Your Cart</h2>
+        <table class="table table-bordered text-center">
+            <thead class="table-dark">
+                <tr>
+                    <th>Item Name</th>
+                    <th>Price (₹)</th>
+                    <th>Quantity</th>
+                </tr>
+            </thead>
+            <tbody id="cart-body">
+            </tbody>
+        </table>
+        <h4 class="text-end">Total Bill: ₹<span id="total-bill">0</span></h4>
+        <div class="text-center mt-3">
+            <button class="btn btn-success" onclick="calculateBill()">Calculate Bill</button>
+            <button class="btn btn-danger" onclick="purchase()">Purchase</button>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white text-center py-3">
+        <p>2025 GenGear. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        let cart = [];
+        function addToCart(itemName, price) {
+            let existingItem = cart.find(item => item.name === itemName);
+            if (existingItem) {
+                existingItem.quantity++;
+            } else {
+                cart.push({ name: itemName, price: price, quantity: 1 });
+            }
+            updateCartTable();
+        }
+        function updateCartTable() {
+            let cartBody = document.getElementById("cart-body");
+            cartBody.innerHTML = ""; 
+            cart.forEach(item => {
+                let row = `<tr>
+                            <td>${item.name}</td>
+                            <td>${item.price}</td>
+                            <td>${item.quantity}</td>
+                           </tr>`;
+                cartBody.innerHTML += row;
+            });
+        }
+        function calculateBill() {
+            let total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            document.getElementById("total-bill").innerText = total;
+        }
+        function purchase() {
+            if (cart.length === 0) {
+                alert("Your cart is empty!");
+                return;
+            }
+            alert("Purchase Successful!");
+            cart = [];
+            document.getElementById("cart-body").innerHTML = ""; 
+            document.getElementById("total-bill").innerText = "0"; 
+        }
+    </script>
+</body>
+</html>

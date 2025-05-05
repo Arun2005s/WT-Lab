@@ -1,0 +1,16 @@
+#na{
+    color:white;
+    text-decoration: none; }
+li{
+  margin-right: 20px;
+}
+h1 
+    {
+      font-size: 50px;
+    }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  color: #343a40;
+}

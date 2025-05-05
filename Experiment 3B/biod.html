@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KEC Portal - Bio-Data Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark shadow-sm">
+        <div class="container">
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link text-white" href="studet.html">Student Record Form</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="biod.html">Bio-Data Form</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="academic.html">Academic Records</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="cocurricular.html">Co-Curricular Activities</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="extracurricular.html">Extra Curricular Activities</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="achievement.html">Student Achievements</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="address.html">Address</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h2 class="mb-4 text-center">Bio-Data Form</h2>
+        <form id="biodataForm"></form>
+            <div class="mb-3">
+                <label class="form-label">Name</label>
+                <input type="text" class="form-control" name="name" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Date of Birth</label>
+                <input type="date" class="form-control" name="dob" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Email ID</label>
+                <input type="email" class="form-control" name="email" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Community and Caste</label>
+                <input type="text" class="form-control" name="community" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Blood Group</label>
+                <select class="form-control" name="blood_group" required>
+                    <option value="">Select Blood Group</option>
+                    <option value="A+">A+</option>
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+                    <option value="O+">O+</option>
+                    <option value="O-">O-</option>
+                    <option value="AB+">AB+</option>
+                    <option value="AB-">AB-</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Father/Guardian Name & Address</label>
+                <textarea class="form-control" name="father_details" rows="2" required></textarea>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Occupation & Annual Income of Father/Guardian</label>
+                <input type="text" class="form-control" name="father_income" required>
+            </div>
+            <h4 class="text-center mt-4">Educational Qualification</h4>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Exam</th>
+                        <th>Institution</th>
+                        <th>Max Marks</th>
+                        <th>Marks Secured</th>
+                        <th>% of Marks</th>
+                        <th>Year of Passing</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>SSLC</td>
+                        <td><input type="text" class="form-control" name="sslc_institution" required></td>
+                        <td><input type="number" class="form-control" name="sslc_max_marks" required></td>
+                        <td><input type="number" class="form-control" name="sslc_marks_secured" required></td>
+                        <td><input type="number" step="0.01" class="form-control" name="sslc_percentage" required></td>
+                        <td><input type="number" class="form-control" name="sslc_year" required></td>
+                    </tr>
+                    <tr>
+                        <td>HSC</td>
+                        <td><input type="text" class="form-control" name="hsc_institution" required></td>
+                        <td><input type="number" class="form-control" name="hsc_max_marks" required></td>
+                        <td><input type="number" class="form-control" name="hsc_marks_secured" required></td>
+                        <td><input type="number" step="0.01" class="form-control" name="hsc_percentage" required></td>
+                        <td><input type="number" class="form-control" name="hsc_year" required></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="text-center mt-4">
+                <a href="studet.html" class="btn btn-secondary">Back</a>
+                <button type="button" class="btn btn-primary" onclick="validateEmail()">Next</button>
+            </div>
+        </form>
+        <br>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+    <script>
+        function validateEmail() {
+            const email = document.querySelector('input[name="email"]').value;
+            if (!email.endsWith('@kongu.edu')) {
+                alert('@kongu.edu is required');
+            } else {
+                window.location.href = 'academic.html';
+            }
+        }
+    </script>
+</body>
+
+</html>
