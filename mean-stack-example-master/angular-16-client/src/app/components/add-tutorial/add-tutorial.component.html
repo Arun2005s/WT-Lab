@@ -1,0 +1,42 @@
+<div class="container mt-5">
+    <div class="text-center mb-4">
+      <h3 class="card-title">Order Form</h3>
+    </div>
+    <div class="card-body">
+      <div class="submit-form">
+        <div *ngIf="!submitted">
+          <div class="form-group mb-3">
+            <label for="title" class="form-label">Order Title</label>
+            <input
+              type="text"
+              class="form-control"
+              id="title"
+              required
+              [(ngModel)]="tutorial.title"
+              name="title"
+              placeholder="Order title"
+            />
+          </div>
+          <div class="form-group mb-3">
+            <label for="description" class="form-label">Quantity</label>
+            <input
+              type="number"
+              class="form-control"
+              id="description"
+              required
+              [(ngModel)]="tutorial.description"
+              name="description"
+              placeholder="Quantity"
+            />
+          </div>
+
+          <button (click)="saveTutorial()" class="btn btn-success w-100">Place Order</button>
+        </div>
+
+        <div *ngIf="submitted" class="text-center">
+          <h4 class="text-success">Order submitted!</h4>
+          <button class="btn btn-primary mt-3" (click)="newTutorial()">New Order</button>
+        </div>
+      </div>
+    </div>
+</div>

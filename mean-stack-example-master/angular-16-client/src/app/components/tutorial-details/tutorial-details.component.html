@@ -1,0 +1,108 @@
+<div *ngIf="viewMode; else editable" class="container mt-4">
+  <div *ngIf="currentTutorial.id" class="card shadow-sm p-4">
+    <h4 class="text-primary">Order Details</h4>
+    <div class="mb-3">
+      <label class="fw-bold"><strong>Title:</strong></label>
+      <span class="text-secondary">{{ currentTutorial.title }}</span>
+    </div>
+    <div class="mb-3">
+      <label class="fw-bold"><strong>Quantity:</strong></label>
+      <span class="text-secondary">{{ currentTutorial.description }}</span>
+    </div>
+    <div class="mb-3">
+      <label class="fw-bold"><strong>Status:</strong></label>
+      <span
+        class="badge"
+        [ngClass]="currentTutorial.published ? 'bg-success' : 'bg-warning'"
+      >
+        {{ currentTutorial.published ? "Published" : "Pending" }}
+      </span>
+    </div>
+
+    <a
+      class="btn btn-primary btn-sm"
+      routerLink="/tutorials/{{ currentTutorial.id }}"
+    >
+      Edit
+    </a>
+  </div>
+
+  <div *ngIf="!currentTutorial" class="text-center mt-4">
+    <p class="text-muted">Please click on an Order...</p>
+  </div>
+</div>
+
+<ng-template #editable>
+  <div *ngIf="currentTutorial.id" class="edit-form container mt-4">
+    <div class="card shadow-sm p-4">
+      <h4 class="text-primary">Edit Order</h4>
+      <form>
+        <div class="form-group mb-3">
+          <label for="title" class="fw-bold">Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="title"
+            [(ngModel)]="currentTutorial.title"
+            name="title"
+          />
+        </div>
+        <div class="form-group mb-3">
+          <label for="description" class="fw-bold">Quantity</label>
+          <input
+            type="text"
+            class="form-control"
+            id="description"
+            [(ngModel)]="currentTutorial.description"
+            name="description"
+          />
+        </div>
+
+        <div class="form-group mb-3">
+          <label class="fw-bold"><strong>Status:</strong></label>
+          <span
+            class="badge"
+            [ngClass]="currentTutorial.published ? 'bg-success' : 'bg-warning'"
+          >
+            {{ currentTutorial.published ? "Published" : "Pending" }}
+          </span>
+        </div>
+      </form>
+
+      <div class="d-flex justify-content-between">
+        <button
+          class="btn btn-outline-primary btn-sm"
+          *ngIf="currentTutorial.published"
+          (click)="updatePublished(false)"
+        >
+          UnPublish
+        </button>
+        <button
+          *ngIf="!currentTutorial.published"
+          class="btn btn-outline-primary btn-sm"
+          (click)="updatePublished(true)"
+        >
+          Publish
+        </button>
+        <button
+          class="btn btn-outline-danger btn-sm"
+          (click)="deleteTutorial()"
+        >
+          Cancel Order
+        </button>
+        <button
+          type="submit"
+          class="btn btn-success btn-sm"
+          (click)="updateTutorial()"
+        >
+          Update
+        </button>
+      </div>
+      <p class="text-success mt-3">{{ message }}</p>
+    </div>
+  </div>
+
+  <div *ngIf="!currentTutorial.id" class="text-center mt-4">
+    <p class="text-muted">Cannot access this Order...</p>
+  </div>
+</ng-template>

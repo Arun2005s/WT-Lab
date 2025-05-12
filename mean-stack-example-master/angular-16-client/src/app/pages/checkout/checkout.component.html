@@ -1,0 +1,52 @@
+<section class="container my-5">
+  <h2 class="text-center mb-4">Checkout</h2>
+
+  <div *ngIf="cart.length > 0; else emptyCart">
+    <h4>Cart Summary:</h4>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of cart">
+          <td>{{ item.title }}</td>
+          <td>₹{{ item.price }}</td>
+          <td>{{ item.quantity }}</td>
+          <td>₹{{ item.price * item.quantity }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <h4>Total: ₹{{ grandTotal }}</h4>
+  </div>
+
+  <ng-template #emptyCart>
+    <p>Your cart is empty.</p>
+  </ng-template>
+
+  <h2>Billing Details</h2>
+  <form (ngSubmit)="submitCheckoutForm(checkoutForm)" #checkoutForm="ngForm">
+    <div class="mb-3">
+      <label for="name" class="form-label">Full Name</label>
+      <input type="text" class="form-control" id="name"  name="name">
+    </div>
+    <div class="mb-3">
+      <label for="address" class="form-label">Address</label>
+      <textarea class="form-control" id="address" rows="3"  name="address"></textarea>
+    </div>
+    <div class="mb-3">
+      <label for="payment-method" class="form-label">Payment Method :  </label>
+      <select class="form-select" id="payment-method"  name="paymentMethod">
+        <option value="" disabled selected>Select Payment Method</option>
+        <option value="credit-card">Credit Card</option>
+        <option value="debit-card">Debit Card</option>
+        <option value="cod">Cash on Delivery</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-warning">Place Order</button>
+  </form>
+</section>
