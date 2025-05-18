@@ -1,0 +1,32 @@
+<div class="container mt-4">
+  <h2 class="text-center">Customer Feedback</h2>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Feedback</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let fb of feedbacks">
+        <td><input [(ngModel)]="fb.name" class="form-control"></td>
+        <td><input [(ngModel)]="fb.age" type="number" class="form-control"></td>
+        <td><input [(ngModel)]="fb.feedback" class="form-control"></td>
+        <td>
+          <button class="btn btn-warning" (click)="updateFeedback(fb)">Update</button>
+          <button class="btn btn-danger" (click)="deleteFeedback(fb._id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h4>Add New Feedback</h4>
+  <div class="mb-3">
+    <input type="text" [(ngModel)]="newName" placeholder="Your Name" class="form-control mb-2">
+    <input type="number" [(ngModel)]="newAge" placeholder="Your Age" class="form-control mb-2">
+    <textarea [(ngModel)]="newFeedback" placeholder="Your Feedback" class="form-control mb-2"></textarea>
+    <button class="btn btn-warning" (click)="addFeedback()">Submit Feedback</button>
+  </div>
+</div>
